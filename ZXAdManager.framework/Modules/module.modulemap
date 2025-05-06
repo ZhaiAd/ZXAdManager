@@ -1,0 +1,6 @@
+framework module ZXAdManager {
+  umbrella header "ZXAdManager.h"
+  export *
+
+  module * { export * }
+}
