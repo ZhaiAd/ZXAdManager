@@ -38,6 +38,7 @@ typedef NS_ENUM(NSInteger, ZXAdSDKType) {
 
 -(void)SDKInitSuccessWithArray:(NSArray *)resultArr;
 -(void)SDKInitFail;
+-(void)zxNilAd;
 @end
 @interface ZXAdManager : NSObject
 @property(nonatomic, weak)id<ZXAdManagerDelegate> delegate;

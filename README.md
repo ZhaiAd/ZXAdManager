@@ -140,3 +140,8 @@ sdk初始化回调
 [ZXAdManager removeBannerOrNativeExpress];
 ```
 
+广告竞价失败回调  
+
+```
+-(void)zxNilAd;
+```
