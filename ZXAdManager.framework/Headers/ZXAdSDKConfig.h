@@ -48,6 +48,8 @@ typedef NS_ENUM(NSUInteger, SDKEnv) {
 + (BOOL)isEmpty:(id)object;
 
 + (NSString *)exchangeStringWithdict:(NSDictionary *)dict;
+#pragma mark - 下载缓存图片
++ (void)downloadImageWithURL:(NSString *)urlString completion:(void (^)(UIImage *image))completion;
 @end
 
 NS_ASSUME_NONNULL_END

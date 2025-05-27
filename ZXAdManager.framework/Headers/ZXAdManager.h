@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, ZXAdSDKPlatform) {
     AdSDKKUAISHOU       =  1,
     AdSDKBAIQINGTENG    =  2,
     AdSDKYOULIANGHUI    =  3,
-    AdSDKZXKJ,
+    AdSDKZXKJ           =  4,
 };
 
 typedef NS_ENUM(NSInteger, ZXAdSDKType) {
@@ -38,7 +38,19 @@ typedef NS_ENUM(NSInteger, ZXAdSDKType) {
 
 -(void)SDKInitSuccessWithArray:(NSArray *)resultArr;
 -(void)SDKInitFail;
+-(void)SDKThirdAdInitSuccessed;
+-(void)SDKThirdAdFail;
+
+
 -(void)zxNilAd;
+-(void)zxSplashClosed;
+-(void)zxSplashClicked;
+
+
+
+
+-(void)currentAdxPrice:(double)eCpm;
+
 @end
 @interface ZXAdManager : NSObject
 @property(nonatomic, weak)id<ZXAdManagerDelegate> delegate;
@@ -58,6 +70,9 @@ typedef NS_ENUM(NSInteger, ZXAdSDKType) {
 
 +(void)removeBannerOrNativeExpress;
 
+//-(void)zxAdWithAdId:(NSString *)adId andMainView:(UIView *)mainView andAdType:(ZXAdSDKType )adType;
+
++(void)applicationDidBecomeActive:(UIApplication *)application;
 @end
 
 NS_ASSUME_NONNULL_END
