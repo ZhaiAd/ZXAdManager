@@ -4,10 +4,11 @@ SDKDemo：
 1.pod导入第三方库
   
 ```
-pod 'GDTMobSDK'                      ##腾讯
+  pod 'GDTMobSDK','4.15.30'                     ##腾讯
   pod 'KSAdSDK','3.3.76'  ## adn
   pod 'BaiduMobAdSDK', '~> 5.390'                       ##百度
   pod 'Ads-CN-Beta','6.8.0.5', :subspecs => ['BUAdSDK', 'CSJMediation']
+  pod 'AnyThinkiOS','6.4.75'
 ```
 2.主工程---->Build Settings ---->Other Linker Flags配置
 ```
@@ -57,6 +58,8 @@ libz.tbd
 ```
 4.导入SDK文件
 ZXAdManager.framework
+ZXAdManager.bundle
+
 5.info.plist文件
 ```
 <key>NSAppTransportSecurity</key>
@@ -140,8 +143,43 @@ sdk初始化回调
 [ZXAdManager removeBannerOrNativeExpress];
 ```
 
-广告竞价失败回调  
+5.SDK回调
+5.1广告竞价失败回调  
 
 ```
 -(void)zxNilAd;
+```
+
+5.2第三方广告初始化成功
+
+```
+-(void)SDKThirdAdInitSuccessed
+{
+    NSLog(@"第三方sdk初始化成功");
+}
+```
+5.3第三方广告初始化失败，目前有4个第三方广告源，失败个数1-4
+```
+-(void)SDKThirdAdFail
+{
+    NSLog(@"第三方sdk初始化失败");
+}
+```
+5.4开屏点击回调
+
+```
+-(void)zxSplashClicked
+{
+    NSLog(@"点击开屏广告");
+}
+```
+5.5开屏关闭回调
+
+```
+-(void)zxSplashClosed
+{
+    NSLog(@"关闭开屏广告");
+    //如果传了view视图，要判断view视图是否存在，如果存在要移除
+    [self.mainView removeFromSuperview];
+}
 ```
