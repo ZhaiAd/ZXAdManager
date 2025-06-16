@@ -67,7 +67,7 @@ typedef NS_ENUM(NSInteger, ZXAdSDKType) {
 +(void)initSDKWithConfig:(ZXAdSDKConfig *)config;
 
 //加载全部广告
-- (void)loadAllAdWithView:(UIView *)mainView andLogoImage:(UIImage *)logoImage andPosID:(NSString *)posID  andAdType:(ZXAdSDKType )adType;
+- (void)loadAllAdWithView:(UIView *)mainView andLogoBottomV:(UIView *)bottomView andPosID:(NSString *)posID  andAdType:(ZXAdSDKType )adType;
 
 //加载单个广告
 - (void)loadAdWithView:(UIView *)mainView andPosID:(NSString *)posID andAdType:(ZXAdSDKType )adType platform:(ZXAdSDKPlatform)platform;

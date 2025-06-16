@@ -118,13 +118,16 @@ sdk初始化回调
 2.加载同一类型所有广告源的广告
 //加载全部广告
 ```
-
 //加载全部广告
-- (void)loadAllAdWithView:(UIView *)mainView andLogoImage:(UIImage *)logoImage andPosID:(NSString *)posID  andAdType:(ZXAdSDKType )adType;
+- (void)loadAllAdWithView:(UIView *)mainView andLogoBottomV:(UIView *)bottomView andPosID:(NSString *)posID  andAdType:(ZXAdSDKType )adType;
 
 示例：
 
- [[ZXAdManager shareInstance] loadAllAdWithView:self.mainView andLogoImage:[UIImage imageNamed:@"ZXLogin.png"] andPosID:@"2398634222" andAdType:ZXAdSDKTypeExpressFeed];
+bottomView只有开屏的时候需要传，其他时候不用传，主要用来显示logo
+开屏logo显示：本地传的window上穿个mainview来装开屏广告，window本地加个logo，占屏幕1/4  
+
+
+[[ZXAdManager shareInstance] loadAllAdWithView:self.mainView andLogoBottomV:self.bottomV andPosID:@"2029224951" andAdType:ZXAdSDKTypeFullScreen];
 
 ```
 3.加载单一类型单个广告源的广告
