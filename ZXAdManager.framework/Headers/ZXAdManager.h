@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, ZXAdSDKPlatform) {
     AdSDKBAIQINGTENG    =  2,
     AdSDKYOULIANGHUI    =  3,
     AdSDKZXKJ           =  4,
+    AdSDKJINGMEI           =  5,
 };
 
 typedef NS_ENUM(NSInteger, ZXAdSDKType) {
@@ -43,7 +44,10 @@ typedef NS_ENUM(NSInteger, ZXAdSDKType) {
 
 
 -(void)zxNilAd;
--(void)zxSplashClosed;
+-(void)zxSplashClosed:(ZXAdSDKPlatform )platType;
+-(void)zxSplashShowType:(ZXAdSDKPlatform )platType;
+-(void)zxBannerShowType:(ZXAdSDKPlatform )platType;
+-(void)zxBannerClosed:(ZXAdSDKPlatform )platType;
 -(void)zxSplashClicked;
 
 
@@ -63,7 +67,7 @@ typedef NS_ENUM(NSInteger, ZXAdSDKType) {
 +(void)initSDKWithConfig:(ZXAdSDKConfig *)config;
 
 //加载全部广告
-- (void)loadAllAdWithView:(UIView *)mainView andPosID:(NSString *)posID  andAdType:(ZXAdSDKType )adType;
+- (void)loadAllAdWithView:(UIView *)mainView andLogoImage:(UIImage *)logoImage andPosID:(NSString *)posID  andAdType:(ZXAdSDKType )adType;
 
 //加载单个广告
 - (void)loadAdWithView:(UIView *)mainView andPosID:(NSString *)posID andAdType:(ZXAdSDKType )adType platform:(ZXAdSDKPlatform)platform;
@@ -73,6 +77,9 @@ typedef NS_ENUM(NSInteger, ZXAdSDKType) {
 //-(void)zxAdWithAdId:(NSString *)adId andMainView:(UIView *)mainView andAdType:(ZXAdSDKType )adType;
 
 +(void)applicationDidBecomeActive:(UIApplication *)application;
+
++(void)makeToastWithText:(NSString *)text;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -176,10 +176,37 @@ sdk初始化回调
 5.5开屏关闭回调
 
 ```
--(void)zxSplashClosed
+-(void)zxSplashClosed:(ZXAdSDKPlatform)platType
 {
     NSLog(@"关闭开屏广告");
     //如果传了view视图，要判断view视图是否存在，如果存在要移除
     [self.mainView removeFromSuperview];
+}
+```
+
+5.6开屏展示回调
+```
+-(void)zxSplashShowType:(ZXAdSDKPlatform)platType
+{
+    NSLog(@"展示开屏广告==%ld",(long)platType);
+    [ZXAdManager makeToastWithText:@"展示开屏广告回调"];
+}
+```
+5.7banner关闭回调
+
+```
+-(void)zxBannerClosed:(ZXAdSDKPlatform)platType
+{
+    NSLog(@"关闭banner广告==%ld",(long)platType);
+    [ZXAdManager makeToastWithText:@"关闭banner广告回调"];
+}
+```
+5.8 banner展示回调
+
+```
+-(void)zxBannerShowType:(ZXAdSDKPlatform)platType
+{
+    NSLog(@"展示banner广告==%ld",(long)platType);
+    [ZXAdManager makeToastWithText:@"展示banner广告回调"];
 }
 ```

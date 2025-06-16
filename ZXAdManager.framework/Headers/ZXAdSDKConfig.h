@@ -41,6 +41,9 @@ typedef NS_ENUM(NSUInteger, SDKEnv) {
 +(NSString *)macAddress;
 +(NSString *)getIDFA;
 
++(NSString *)getIDFV;
+
+
 + (NSString *)generateUniqueRequestID;
 
 //时间戳
@@ -50,6 +53,11 @@ typedef NS_ENUM(NSUInteger, SDKEnv) {
 + (NSString *)exchangeStringWithdict:(NSDictionary *)dict;
 #pragma mark - 下载缓存图片
 + (void)downloadImageWithURL:(NSString *)urlString completion:(void (^)(UIImage *image))completion;
+
++(NSString*)getCurrentBundleID;
++(void)makeToastWithText:(NSString *)text;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
