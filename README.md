@@ -4,11 +4,13 @@ SDKDemo：
 1.pod导入第三方库
   
 ```
-  pod 'GDTMobSDK','4.15.30'                     ##腾讯
-  pod 'KSAdSDK','3.3.76'  ## adn
+  pod 'GDTMobSDK','4.15.40'                      ##腾讯
+  pod 'KSAdSDK','4.4.20.1'  ## adn
   pod 'BaiduMobAdSDK', '~> 5.390'                       ##百度
   pod 'Ads-CN-Beta','6.8.0.5', :subspecs => ['BUAdSDK', 'CSJMediation']
   pod 'AnyThinkiOS','6.4.75'
+  pod 'JADYun' ##京媒
+  pod 'JADYunMotion'  ##京媒摇一摇
 ```
 2.主工程---->Build Settings ---->Other Linker Flags配置
 ```
@@ -116,10 +118,14 @@ sdk初始化回调
 2.加载同一类型所有广告源的广告
 //加载全部广告
 ```
-- (void)loadAllAdWithView:(UIView *)mainView andPosID:(NSString *)posID  andAdType:(ZXAdSDKType )adType;
+
+//加载全部广告
+- (void)loadAllAdWithView:(UIView *)mainView andLogoImage:(UIImage *)logoImage andPosID:(NSString *)posID  andAdType:(ZXAdSDKType )adType;
 
 示例：
- [[ZXAdManager shareInstance] loadAllAdWithView:self.mainView andPosID:@"2085643841" andAdType:ZXAdSDKTypeFullscreenVideo];
+
+ [[ZXAdManager shareInstance] loadAllAdWithView:self.mainView andLogoImage:[UIImage imageNamed:@"ZXLogin.png"] andPosID:@"2398634222" andAdType:ZXAdSDKTypeExpressFeed];
+
 ```
 3.加载单一类型单个广告源的广告
  //加载单个广告
